@@ -13,15 +13,18 @@ import { CommunityDataService } from '../../providers/communitydata-service'
 export class Page1 {
   title: string = "Home";
   CommunityData: any;
+  sliderOptions: any;
 
   constructor(public navCtrl: NavController, public communityDataService: CommunityDataService) {
-    
+    this.sliderOptions = {
+      pager: true
+    };
   }
 
  
 
   ionViewDidLoad(){
-  
+    
   }
 
   loadCommunityData(){

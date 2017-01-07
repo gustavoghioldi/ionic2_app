@@ -7,7 +7,7 @@ export class CategoriesService {
   data: any;
 
   constructor(public http: Http) {
-    console.log('Hello CategoriesService Provider');
+    console.log('CONSTRUCT CategoriesService');
   }
 
   load() {
