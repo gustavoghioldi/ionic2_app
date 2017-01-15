@@ -1,14 +1,25 @@
-.ios, .md {
- 
-  page-page1 {
-    ion-slides {
-      height: 15vh !important;
-    }
+.card-background-page {
 
-    ion-slide {
-      height: 15vh !important;
-    }
- 
+  ion-card {
+    position: relative;
+    text-align: center;
   }
- 
+
+  .card-title-custom {
+    position: absolute;
+    top: 25%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .card-subtitle-custom {
+    font-size: 1.0em;
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    color: #fff;
+  }
+
 }
