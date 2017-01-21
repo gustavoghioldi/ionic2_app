@@ -4,6 +4,7 @@ import { MyApp } from './app.component';
 
 import { Page1 } from '../pages/page1/page1';
 import { Categorias } from '../pages/categorias/categorias';
+import { ScanPage } from '../pages/scan/scan';
 import { Beneficios } from '../pages/beneficios/beneficios';
 import { Credencial } from '../pages/credencial/credencial';
 import { Contacto } from '../pages/contacto/contacto';
@@ -17,7 +18,8 @@ import { Data } from '../providers/data';
     Categorias,
     Beneficios,
     Credencial,
-    Contacto
+    Contacto,
+    ScanPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
