@@ -1,4 +1,30 @@
-<ion-list-header>Barcode</ion-list-header>
-<ion-item>
-{{ result.text }}
-</ion-item>
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ title }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-item>
+        {{ result.text }}
+    </ion-item>
+    
+     <ion-list>
+ 
+      <ion-item>
+        <ion-label floating>Nombre y Apellido:</ion-label>
+        <ion-input type="text" [(ngModel)]="name"></ion-input>
+      </ion-item>
+ 
+      <ion-item>
+        <ion-label floating>Nro de Tarjeta</ion-label>
+        <ion-input type="text" [(ngModel)]="card_number"></ion-input>
+      </ion-item>
+ 
+    </ion-list>
+    <button full ion-button color="secondary" (click)="saveItem()">Pagar</button> 
+</ion-content>

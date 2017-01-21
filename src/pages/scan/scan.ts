@@ -7,6 +7,9 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class ScanPage {
 
+  title: string = "Formulario de Pago";
+  card_number: number;
+  name: string;
   barcodeData: any;
 
   constructor(public navCtrl: NavController, navParams: NavParams) {
