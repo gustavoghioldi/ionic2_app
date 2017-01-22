@@ -9,12 +9,19 @@ import {BarcodeScanner} from 'ionic-native';
 export class ScanPage {
 
   title: string = "Formulario de Pago";
+  
   card_number: number;
   name: string;
+  year: number;
+  month: number;
+  dni_type: string;
+  dni: number;
+  emil: string;
+
   barcodeData: any;
 
   constructor(public navCtrl: NavController, navParams: NavParams) {
-    this.barcodeData ="";
+    this.barcodeData = "";                                          
   }
 
   
@@ -22,7 +29,6 @@ export class ScanPage {
     BarcodeScanner.scan()
       .then((result) => {
         if (!result.cancelled) {
-          alert(result);
           this.barcodeData = result.text;
         }
         })
@@ -30,7 +36,12 @@ export class ScanPage {
         alert("error");
         alert(err);
       })
-      alert("entre");
+  }
+
+  pay(){
+    alert("Acá el pago");
+    confirm("Desea guardar datos de pago en su dispositivo?");
+    
   }
 
 }
