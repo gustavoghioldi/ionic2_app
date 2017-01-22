@@ -31,7 +31,8 @@ import { Data } from '../providers/data';
     Categorias,
     Beneficios,
     Credencial,
-    Contacto
+    Contacto,
+    ScanPage
   ],
   providers: [Storage, Data, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

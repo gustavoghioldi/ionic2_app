@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import {BarcodeScanner} from 'ionic-native';
 
 @Component({
   selector: 'page-scan',
@@ -13,12 +14,23 @@ export class ScanPage {
   barcodeData: any;
 
   constructor(public navCtrl: NavController, navParams: NavParams) {
-    this.barcodeData = navParams.get('details');
+    this.barcodeData ="";
   }
 
   
   ionViewDidLoad() {
-    console.log('Hello ScanPage Page');
+    BarcodeScanner.scan()
+      .then((result) => {
+        if (!result.cancelled) {
+          alert(result);
+          this.barcodeData = result.text;
+        }
+        })
+      .catch((err) => {
+        alert("error");
+        alert(err);
+      })
+      alert("entre");
   }
 
 }
