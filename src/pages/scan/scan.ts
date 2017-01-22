@@ -1,27 +1,23 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {BarcodeScanner} from 'ionic-native';
+import { Storage } from '@ionic/storage';
+
 
 @Component({
   selector: 'page-scan',
   templateUrl: 'scan.html'
 })
+
 export class ScanPage {
 
   title: string = "Formulario de Pago";
-  
-  card_number: number;
-  name: string;
-  year: number;
-  month: number;
-  dni_type: string;
-  dni: number;
-  emil: string;
-
+  pay: any;
   barcodeData: any;
 
-  constructor(public navCtrl: NavController, navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
     this.barcodeData = "";                                          
+    this.pay= {};
   }
 
   
@@ -38,10 +34,16 @@ export class ScanPage {
       })
   }
 
-  pay(){
-    alert("Acá el pago");
-    confirm("Desea guardar datos de pago en su dispositivo?");
-    
+  payAction(event){
+    if(confirm("Desea guardar datos de pago en su dispositivo?")){
+      
+      this.savePaymentData();
+    }
+
+  }
+
+  savePaymentData(){
+    this.storage.set("pay",this.pay);
   }
 
 }

@@ -15,14 +15,14 @@
       <ion-row>
        <ion-item>
           <ion-label floating>Nombre y Apellido:</ion-label>
-          <ion-input type="text" [(ngModel)]="name"></ion-input>
+          <ion-input type="text" [(ngModel)]="pay.name"></ion-input>
         </ion-item>
       </ion-row>
 
       <ion-row>
         <ion-item>
           <ion-label floating>Nro de Tarjeta</ion-label>
-          <ion-input type="number" [(ngModel)]="card_number"></ion-input>
+          <ion-input type="number" [(ngModel)]="pay.card_number"></ion-input>
         </ion-item>
       </ion-row>
 
@@ -30,14 +30,14 @@
         <ion-col width-50>
            <ion-item>
               <ion-label floating>Mes</ion-label>
-              <ion-input type="number" [(ngModel)]="month"></ion-input>
+              <ion-input type="number" [(ngModel)]="pay.month"></ion-input>
            </ion-item>
         </ion-col>
 
         <ion-col width-50>
            <ion-item>
               <ion-label floating>Año</ion-label>
-              <ion-input type="number" [(ngModel)]="year"></ion-input>
+              <ion-input type="number" [(ngModel)]="pay.year"></ion-input>
            </ion-item>
         </ion-col>
       </ion-row>
@@ -46,7 +46,7 @@
           <ion-col width-50>
             <ion-item>
               <ion-label floating>Tipo</ion-label>
-              <ion-select [(ngModel)]="dni_type">
+              <ion-select [(ngModel)]="pay.dni_type">
                 <ion-option>DNI</ion-option>
               </ion-select>
             </ion-item>
@@ -55,19 +55,19 @@
           <ion-col width-50>
             <ion-item>
               <ion-label floating>Número</ion-label>
-              <ion-input type="number" [(ngModel)]="dni" min="0"></ion-input>
+              <ion-input type="number" [(ngModel)]="pay.dni" min="0"></ion-input>
             </ion-item>
           </ion-col>
       </ion-row>
       <ion-row>
         <ion-item>
           <ion-label floating>email</ion-label>
-          <ion-input type="email" [(ngModel)]="email"></ion-input>
+          <ion-input type="email" [(ngModel)]="pay.email"></ion-input>
         </ion-item>
       </ion-row>
       
       <ion-row>
-        <button full ion-button color="secondary" (click)='pay()' >Pagar</button> 
+        <button full ion-button color="secondary" (click)='payAction()' >Pagar</button> 
       </ion-row>
     </ion-grid>
  
