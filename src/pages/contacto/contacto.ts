@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Data } from '../../providers/data';
+import { Payment } from '../payment/payment';
 /*
   Generated class for the Contacto page.
 
@@ -40,9 +41,12 @@ export class Contacto {
         this.dataService.save('todos', this.message);
       }
     });
-
+    
 
 
   }
 
+  toPayment(){
+    this.navCtrl.push(Payment, {});
+  }
 }

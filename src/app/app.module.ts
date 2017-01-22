@@ -7,6 +7,7 @@ import { Categorias } from '../pages/categorias/categorias';
 import { Beneficios } from '../pages/beneficios/beneficios';
 import { Credencial } from '../pages/credencial/credencial';
 import { Contacto } from '../pages/contacto/contacto';
+import { Payment } from '../pages/payment/payment';
 import { Storage } from '@ionic/storage';
 import { Data } from '../providers/data';
 
@@ -17,7 +18,8 @@ import { Data } from '../providers/data';
     Categorias,
     Beneficios,
     Credencial,
-    Contacto
+    Contacto,
+    Payment
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -29,7 +31,8 @@ import { Data } from '../providers/data';
     Categorias,
     Beneficios,
     Credencial,
-    Contacto
+    Contacto,
+    Payment
   ],
   providers: [Storage, Data, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
