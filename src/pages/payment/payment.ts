@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController } from 'ionic-angular'
+import { Storage } from '@ionic/storage';
 
 /*
   Generated class for the Payment page.
@@ -13,10 +14,17 @@ import { NavController } from 'ionic-angular';
 })
 export class Payment {
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController, storage: Storage) {
+    storage.set("clave", {hola:"Gustssssavo"});
+    storage.get("clave").then((val) => {
+       console.log('Your name is', val);
+    });
+     
+  }
 
   ionViewDidLoad() {
     console.log('Hello PaymentPage Page');
-  }
+    
+}
 
 }

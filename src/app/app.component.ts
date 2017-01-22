@@ -6,6 +6,7 @@ import { Page1 } from '../pages/page1/page1';
 import { Categorias } from '../pages/categorias/categorias';
 import { Credencial } from '../pages/credencial/credencial';
 import { Contacto } from '../pages/contacto/contacto';
+import { Payment } from '../pages/payment/payment';
 
 @Component({
   templateUrl: 'app.html'
@@ -25,7 +26,8 @@ export class MyApp {
       { title: 'Home', component: Page1 },
       { title: 'Categorías', component: Categorias },
       { title: 'Credencial Virtual', component: Credencial},
-      { title: 'Contacto', component: Contacto}
+      { title: 'Contacto', component: Contacto},
+      { title: 'storage', component: Payment}
 
     ];
 
