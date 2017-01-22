@@ -8,8 +8,12 @@ import { ScanPage } from '../pages/scan/scan';
 import { Beneficios } from '../pages/beneficios/beneficios';
 import { Credencial } from '../pages/credencial/credencial';
 import { Contacto } from '../pages/contacto/contacto';
+import { Payment } from '../pages/payment/payment';
 import { Storage } from '@ionic/storage';
-import { Data } from '../providers/data';
+
+export function provideStorage() {
+  return new Storage(['indexeddb'], { name: '__benefit' });
+}
 
 @NgModule({
   declarations: [
@@ -19,7 +23,8 @@ import { Data } from '../providers/data';
     Beneficios,
     Credencial,
     Contacto,
-    ScanPage
+    ScanPage,
+    Payment
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -32,8 +37,9 @@ import { Data } from '../providers/data';
     Beneficios,
     Credencial,
     Contacto,
-    ScanPage
+    ScanPage,
+    Payment
   ],
-  providers: [Storage, Data, {provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{ provide: Storage, useFactory: provideStorage }, {provide: [ErrorHandler], useClass: IonicErrorHandler}]
 })
 export class AppModule {}
