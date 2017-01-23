@@ -14,30 +14,26 @@ import {BarcodeScanner} from 'ionic-native';
 })
 export class Scan {
 
-  constructor(public navCtrl: NavController) {}
+    dataScan: any;
+
+  constructor(public navCtrl: NavController) {
+      BarcodeScanner.scan()
+        .then((result) => {
+            if (!result.cancelled) {
+                this.dataScan = result;
+                alert("OK");
+                alert(result);
+        }
+    })
+        .catch((err) => {
+           alert("err");
+          alert(err);
+        })
+    }
+  
 
   ionViewDidLoad() {
     console.log('Hello PaymentPage Page');
   }
 
-  click() {
-BarcodeScanner.scan()
-        .then((result) => {
-            if (!result.cancelled) {
-                const barcodeData = new BarcodeData(result.text, result.format);
-                console.log(barcodeData);
-        }
-    })
-        .catch((err) => {
-          alert(err);
-        })
-    }
-
-}
-
-export class BarcodeData {
-  constructor(
-    public text: String,
-    public format: String
-  ) {}
 }
