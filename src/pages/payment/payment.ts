@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-
+import { NavController , NavParams} from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 /*
   Generated class for the Payment page.
 
@@ -13,10 +13,25 @@ import { NavController } from 'ionic-angular';
 })
 export class Payment {
 
-  constructor(public navCtrl: NavController) {}
-
-  ionViewDidLoad() {
-    console.log('Hello PaymentPage Page');
+  title: string = "Formulario de Pago";
+  pay: any;
+  paymentMethods: any;
+  
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
+    this.pay={};
+    storage.get('payment_methods').then((val)=>{
+      if(val){
+        this.paymentMethods = val;
+      } else {
+        this.paymentMethods = {};
+      }
+    
+  });
   }
 
+  addPaymentMethod(){
+    this.paymentMethods.push(this.pay);
+    this.storage.set('payment_methods', this.paymentMethods);
+  }
 }
+

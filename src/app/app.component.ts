@@ -7,6 +7,7 @@ import { Categorias } from '../pages/categorias/categorias';
 import { Credencial } from '../pages/credencial/credencial';
 import { Contacto } from '../pages/contacto/contacto';
 import { Scan } from '../pages/scan/scan';
+import { Payment } from '../pages/payment/payment';
 
 @Component({
   templateUrl: 'app.html'
@@ -27,7 +28,8 @@ export class MyApp {
       { title: 'Categorías', component: Categorias },
       { title: 'Credencial Virtual', component: Credencial},
       { title: 'Contacto', component: Contacto},
-      { title: 'Scan', component: Scan}
+      { title: 'Scan', component: Scan},
+      { title: 'Medios de Pago', component: Payment}
 
     ];
 
