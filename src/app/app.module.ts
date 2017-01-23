@@ -8,8 +8,9 @@ import { Beneficios } from '../pages/beneficios/beneficios';
 import { Credencial } from '../pages/credencial/credencial';
 import { Contacto } from '../pages/contacto/contacto';
 import { Payment } from '../pages/payment/payment';
+import { Scan } from '../pages/scan/scan';
 import { Storage } from '@ionic/storage';
-import { Data } from '../providers/data';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { Data } from '../providers/data';
     Beneficios,
     Credencial,
     Contacto,
-    Payment
+    Payment,
+    Scan
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -32,8 +34,9 @@ import { Data } from '../providers/data';
     Beneficios,
     Credencial,
     Contacto,
-    Payment
+    Payment,
+    Scan
   ],
-  providers: [Storage, Data, {provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [Storage,  {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}
