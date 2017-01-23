@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Data } from '../../providers/data';
-import { Payment } from '../payment/payment';
 /*
   Generated class for the Contacto page.
 
@@ -20,33 +18,10 @@ export class Contacto {
   description: string;
   public message = [];
 
-  constructor(public navCtrl: NavController, public dataService: Data) {}
+  constructor(public navCtrl: NavController) {}
 
   ionViewDidLoad() {
     console.log('Hello ContactoPage Page');
   }
 
-  saveItem()
-  {
-    let newMessage = {
-      motivo: this.motivo,
-      description : this.description
-    }
-
-    this.dataService.getData('todos').then((todos)=>{
-      if(todos){
-        console.log(todos);
-        this.message.push(newMessage);
-        console.log(this.message);
-        this.dataService.save('todos', this.message);
-      }
-    });
-    
-
-
-  }
-
-  toPayment(){
-    this.navCtrl.push(Payment, {});
-  }
 }

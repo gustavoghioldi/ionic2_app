@@ -13,18 +13,23 @@ import { Storage } from '@ionic/storage';
   templateUrl: 'payment.html'
 })
 export class Payment {
-
+  title: string = "Medios de Pago";
+  paymentMethods : any;
+  
   constructor(public navCtrl: NavController, storage: Storage) {
-    storage.set("clave", {hola:"Gustssssavo"});
-    storage.get("clave").then((val) => {
-       console.log('Your name is', val);
-    });
-     
+    //storage.clear();
+    //storage.set('payment_methods', [{name:"metodo de pago 1"}, {name:"metodo de pago 2"}]);
+    storage.get('payment_methods').then((val) => {
+      if(val==null){
+        this.paymentMethods = [];
+      } else {
+        this.paymentMethods = val;
+      }
+     })
   }
 
   ionViewDidLoad() {
     console.log('Hello PaymentPage Page');
-    
-}
+  }
 
 }
