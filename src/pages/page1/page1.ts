@@ -15,6 +15,7 @@ export class Page1 {
   CommunityData: any;
   
   constructor(public navCtrl: NavController, public communityDataService: CommunityDataService) {
+
     
   }
 
