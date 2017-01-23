@@ -20,10 +20,11 @@ export class Payment {
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
     this.pay={};
     storage.get('payment_methods').then((val)=>{
-      if(val){
-        this.paymentMethods = val;
+      if(val==null){
+        this.paymentMethods = [];
+     
       } else {
-        this.paymentMethods = {};
+        this.paymentMethods = val;
       }
     
   });
@@ -31,7 +32,7 @@ export class Payment {
 
   addPaymentMethod(){
     this.paymentMethods.push(this.pay);
-    this.storage.set('payment_methods', this.paymentMethods);
+    this.storage.set('benefit_payment_methods', this.paymentMethods);
   }
 }
 
