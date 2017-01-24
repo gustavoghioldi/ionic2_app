@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, ViewController} from 'ionic-angular';
+import { NavController, ViewController, NavParams} from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
 @Component({
@@ -13,16 +13,17 @@ export class Payment {
   paymentMethods: any;
   document : string = "benefit_payment_methods";
   
-  constructor(public navCtrl: NavController, public viewController: ViewController ,public storage: Storage) {
+  constructor(public params: NavParams, public navCtrl: NavController, public viewController: ViewController ,public storage: Storage) {
     this.pay={};
-    
+    this.paymentMethods = params.get('payments');
+    console.log(this.paymentMethods);
   }
 
   savePaymentMethod(){
-    //this.paymentMethods.push(this.pay);
-    //this.storage.set(this.document , this.paymentMethods);
+    console.log(this.pay);
+    this.paymentMethods.push(this.pay);
+    this.storage.set(this.document , this.paymentMethods);
     this.viewController.dismiss();
-
   }
 
 
