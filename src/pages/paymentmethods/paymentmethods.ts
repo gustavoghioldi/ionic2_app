@@ -35,7 +35,7 @@ export class Paymentmethods {
 
   addPaymentMethod()
   {
-      let modal = this.modalController.create(Payment);
+      let modal = this.modalController.create(Payment, { payments: this.paymentMethods} );
       modal.present();
   }
 
