@@ -30,6 +30,7 @@ export class Paymentmethods {
             this.paymentMethods = val;
           }
       });
+      console.log(this.paymentMethods);
   }
 
   addPaymentMethod()
