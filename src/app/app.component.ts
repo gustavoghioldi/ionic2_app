@@ -7,7 +7,8 @@ import { Categorias } from '../pages/categorias/categorias';
 import { Credencial } from '../pages/credencial/credencial';
 import { Contacto } from '../pages/contacto/contacto';
 import { Scan } from '../pages/scan/scan';
-import { Payment } from '../pages/payment/payment';
+import { Paymentmethods } from '../pages/paymentmethods/paymentmethods';
+import { Storage } from '@ionic/storage';
 
 @Component({
   templateUrl: 'app.html'
@@ -19,9 +20,9 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform) {
+  constructor(public platform: Platform, storage: Storage) {
     this.initializeApp();
-
+    //storage.clear();
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: Page1 },
@@ -29,7 +30,7 @@ export class MyApp {
       { title: 'Credencial Virtual', component: Credencial},
       { title: 'Contacto', component: Contacto},
       { title: 'Scan', component: Scan},
-      { title: 'Medios de Pago', component: Payment}
+      { title: 'Medios de Pago', component: Paymentmethods}
 
     ];
 

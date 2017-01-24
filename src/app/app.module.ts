@@ -8,6 +8,7 @@ import { Beneficios } from '../pages/beneficios/beneficios';
 import { Credencial } from '../pages/credencial/credencial';
 import { Contacto } from '../pages/contacto/contacto';
 import { Payment } from '../pages/payment/payment';
+import { Paymentmethods } from '../pages/paymentmethods/paymentmethods';
 import { Scan } from '../pages/scan/scan';
 import { Storage } from '@ionic/storage';
 
@@ -21,7 +22,8 @@ import { Storage } from '@ionic/storage';
     Credencial,
     Contacto,
     Payment,
-    Scan
+    Scan,
+    Paymentmethods
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -35,7 +37,8 @@ import { Storage } from '@ionic/storage';
     Credencial,
     Contacto,
     Payment,
-    Scan
+    Scan,
+    Paymentmethods
   ],
   providers: [Storage,  {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

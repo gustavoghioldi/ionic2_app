@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController , NavParams} from 'ionic-angular';
+import { NavController, ViewController} from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-/*
-  Generated class for the Payment page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-payment',
   templateUrl: 'payment.html'
@@ -16,23 +11,21 @@ export class Payment {
   title: string = "Formulario de Pago";
   pay: any;
   paymentMethods: any;
+  document : string = "benefit_payment_methods";
   
-  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
+  constructor(public navCtrl: NavController, public viewController: ViewController ,public storage: Storage) {
     this.pay={};
-    storage.get('payment_methods').then((val)=>{
-      if(val==null){
-        this.paymentMethods = [];
-     
-      } else {
-        this.paymentMethods = val;
-      }
     
-  });
   }
 
-  addPaymentMethod(){
-    this.paymentMethods.push(this.pay);
-    this.storage.set('benefit_payment_methods', this.paymentMethods);
+  savePaymentMethod(){
+    //this.paymentMethods.push(this.pay);
+    //this.storage.set(this.document , this.paymentMethods);
+    this.viewController.dismiss();
+
   }
+
+
+
 }
 
