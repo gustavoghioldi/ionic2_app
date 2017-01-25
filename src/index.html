@@ -36,6 +36,12 @@
 
   <!-- The bundle js is generated during the build process -->
   <script src="build/main.js"></script>
-
+  <script src="http://5822847d.fanoutcdn.com/bayeux/static/faye-browser-min.js"></script>
+  <script type="text/javascript">
+    var client = new Faye.Client('http://{realm-id}.fanoutcdn.com/bayeux');
+    client.subscribe('/alert', function (data) {
+    alert('got data: ' + data);
+    });
+  </script>
 </body>
 </html>
