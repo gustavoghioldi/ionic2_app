@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, ViewController, NavParams} from 'ionic-angular';
+import { Paymentmethods } from '../paymentmethods/paymentmethods';
 import { Storage } from '@ionic/storage';
 
 @Component({
@@ -8,7 +9,6 @@ import { Storage } from '@ionic/storage';
 })
 export class Payment {
 
-  title: string = "Formulario de Pago";
   pay: any;
   paymentMethods: any;
   document : string = "benefit_payment_methods";
@@ -24,9 +24,12 @@ export class Payment {
     this.paymentMethods.push(this.pay);
     this.storage.set(this.document , this.paymentMethods);
     this.viewController.dismiss();
+    this.navCtrl.push(Paymentmethods);
   }
 
-
+  cancelModal(){
+    this.viewController.dismiss();
+  }
 
 }
 

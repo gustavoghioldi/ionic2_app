@@ -36,6 +36,25 @@
 
   <!-- The bundle js is generated during the build process -->
   <script src="build/main.js"></script>
+  
+<div id="output"></div>
+
+<script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+<script src="http://5822847d.fanoutcdn.com/bayeux/static/faye-browser-min.js"></script>
+
+<script>
+var client = new Faye.Client('http://5822847d.fanoutcdn.com/bayeux');
+client.subscribe('/test', function (data) {
+    alert(data);
+});
+
+</script>
+
+
+
 
 </body>
 </html>
