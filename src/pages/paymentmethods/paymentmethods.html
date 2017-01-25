@@ -9,7 +9,15 @@
 
 
 <ion-content padding>
- aca los medios de pago
 
+ <ion-list *ngFor="let data of paymentMethods" no-lines>
+    
+    <button ion-item color="primary" (click)="deletePaymentMethod(data['card_number'])">
+      <ion-icon name="card" item-left></ion-icon>
+      {{ data['card_number']}} <ion-icon name="arrow-forward"></ion-icon>
+    </button>
+</ion-list>
  <button full ion-button color="secondary" (click)="addPaymentMethod()">Agregar Medio de Pago</button> 
+ 
 </ion-content>
+

@@ -20,20 +20,18 @@ export class Scan {
       BarcodeScanner.scan()
         .then((result) => {
             if (!result.cancelled) {
-                this.dataScan = result;
-                alert("OK");
-                alert(result);
+                this.dataScan = (result.text);
         }
     })
         .catch((err) => {
-           alert("err");
-          alert(err);
+          alert((err));
+          console.log(err);
         })
     }
   
 
   ionViewDidLoad() {
-    console.log('Hello PaymentPage Page');
+
   }
 
 }

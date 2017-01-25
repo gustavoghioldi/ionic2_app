@@ -8,7 +8,7 @@ import { Storage } from '@ionic/storage';
 })
 export class Payment {
 
-  title: string = "Formulario de Pago";
+  title: string = "Agregar Medio de Pago";
   pay: any;
   paymentMethods: any;
   document : string = "benefit_payment_methods";
@@ -26,6 +26,9 @@ export class Payment {
     this.viewController.dismiss();
   }
 
+  closePaymentMethod(){
+        this.viewController.dismiss();
+  }
 
 
 }

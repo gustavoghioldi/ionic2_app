@@ -20,8 +20,8 @@ export class Paymentmethods {
   title: string="Medios de Pago";
   paymentMethods: any;
   document : string = "benefit_payment_methods";
-
-  constructor(public navCtrl: NavController, public modalController: ModalController, storage: Storage) {
+  
+  constructor(public navCtrl: NavController, public modalController: ModalController, public storage: Storage) {
       storage.get(this.document).then((val)=>{
       
       if(val==null){
@@ -29,14 +29,26 @@ export class Paymentmethods {
           } else {
             this.paymentMethods = val;
           }
-      });
+
       console.log(this.paymentMethods);
+      });
   }
 
   addPaymentMethod()
   {
       let modal = this.modalController.create(Payment, { payments: this.paymentMethods} );
       modal.present();
+  }
+
+  deletePaymentMethod(cardNumber){
+    let newPaymentMethods = [];
+    this.paymentMethods.forEach((p)=>{
+      if(p.card_number!=cardNumber){
+        newPaymentMethods.push(p);
+      }
+      this.storage.set(this.document, newPaymentMethods);
+      this.paymentMethods = newPaymentMethods;
+    });
   }
 
   ionViewDidLoad() {

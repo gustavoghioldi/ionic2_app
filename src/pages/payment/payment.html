@@ -1,3 +1,9 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ title }}</ion-title>
+</ion-navbar>
+</ion-header>
+
 
 <ion-content padding>
  
@@ -59,6 +65,9 @@
       
       <ion-row>
         <button full ion-button color="secondary"  (click)="savePaymentMethod()" >Agregar</button> 
+      </ion-row>
+      <ion-row>
+        <button full ion-button color="secondary"  (click)="closePaymentMethod()" >Cerrar</button>
       </ion-row>
     </ion-grid>
  
