@@ -10,7 +10,7 @@ export class BenefitsService {
     console.log('Hello BenefitsService Provider');
   }
 
-  load() {
+  load(id) {
   if (this.data) {
     // already loaded data
     return Promise.resolve(this.data);
@@ -21,7 +21,7 @@ export class BenefitsService {
     // We're using Angular HTTP provider to request the data,
     // then on the response, it'll map the JSON data to a parsed JS object.
     // Next, we process the data and resolve the promise with the new data.
-    this.http.get('http://45.55.74.121/mocks/benefits.json')
+    this.http.get('http://benefit-lacaja.herokuapp.com/api/benefits/'+id+'?api_token=9db19FZ9jac1kVoFnxCiYja7fBiHWT1TCGvDXQZpHLpwkJqFpfz5qlVkNgHM')
       .map(res => res.json())
       .subscribe(data => {
         // we've got back the raw data, now generate the core schedule data

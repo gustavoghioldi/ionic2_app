@@ -9,8 +9,13 @@ import { Credencial } from '../pages/credencial/credencial';
 import { Contacto } from '../pages/contacto/contacto';
 import { Payment } from '../pages/payment/payment';
 import { Paymentmethods } from '../pages/paymentmethods/paymentmethods';
+import { Paymentform } from '../pages/paymentform/paymentform';
 import { Scan } from '../pages/scan/scan';
+import { Beneficio } from '../pages/beneficio/beneficio';
+import { Selectpayment } from '../pages/selectpayment/selectpayment';
+
 import { Storage } from '@ionic/storage';
+
 
 
 @NgModule({
@@ -23,7 +28,10 @@ import { Storage } from '@ionic/storage';
     Contacto,
     Payment,
     Scan,
-    Paymentmethods
+    Paymentmethods,
+    Paymentform,
+    Beneficio,
+    Selectpayment
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -38,7 +46,10 @@ import { Storage } from '@ionic/storage';
     Contacto,
     Payment,
     Scan,
-    Paymentmethods
+    Paymentmethods,
+    Paymentform,
+    Beneficio,
+    Selectpayment
   ],
   providers: [Storage,  {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

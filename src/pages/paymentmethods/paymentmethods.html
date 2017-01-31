@@ -1,23 +1,22 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
+    <ion-navbar>
+        <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>{{ title }}</ion-title>
-  </ion-navbar>
+        <ion-title>{{ title }}</ion-title>
+    </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
 
- <ion-list *ngFor="let data of paymentMethods" no-lines>
-    
-    <button ion-item color="primary" (click)="deletePaymentMethod(data['card_number'])">
-      <ion-icon name="card" item-left></ion-icon>
-      {{ data['card_number']}} <ion-icon name="arrow-forward"></ion-icon>
-    </button>
-</ion-list>
- <button full ion-button color="secondary" (click)="addPaymentMethod()">Agregar Medio de Pago</button> 
- 
-</ion-content>
+    <ion-list *ngFor="let data of paymentMethods" no-lines>
 
+        <button ion-item color="primary" (click)="deletePaymentMethod(data['card_number'])">
+      <ion-icon name="card" item-left></ion-icon>
+      {{ data['card_number']}} <ion-icon name="arrow-forward" item-right></ion-icon>
+    </button>
+    </ion-list>
+    <button full ion-button color="secondary" (click)="addPaymentMethod()">Agregar Medio de Pago</button>
+
+</ion-content>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController , ModalController} from 'ionic-angular';
 import {BarcodeScanner} from 'ionic-native';
+import { Paymentform } from '../paymentform/paymentform';
 
 /*
   Generated class for the Payment page.
@@ -16,22 +17,27 @@ export class Scan {
 
     dataScan: any;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public modalController: ModalController) {
       BarcodeScanner.scan()
         .then((result) => {
             if (!result.cancelled) {
                 this.dataScan = (result.text);
+
         }
     })
         .catch((err) => {
-          alert((err));
-          console.log(err);
+          this.bay("ss", "sas");
         })
     }
   
 
   ionViewDidLoad() {
 
+  }
+
+  bay(event, item) {
+      let modal = this.modalController.create(Paymentform, { payments: []} );
+      modal.present();
   }
 
 }

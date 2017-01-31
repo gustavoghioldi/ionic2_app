@@ -32,6 +32,7 @@ export class Categorias {
    loadCategories(){
     this.categoriesService.load()
     .then(data => {
+      console.log(data);
       this.categories = data;
     });
   }

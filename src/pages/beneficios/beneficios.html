@@ -1,24 +1,24 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>{{ title }} - {{selectedItem.title}}</ion-title>
-</ion-navbar>
+    <ion-navbar>
+        <ion-title>{{ title }} - {{selectedItem.title}}</ion-title>
+    </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
-    <b>{{selectedItem.title}}</b>
-   <ion-list>
-    <button ion-item *ngFor="let item of benefits">
+    <b>{{selectedItem.category.name}}</b>
+    <ion-list>
+        <button ion-item *ngFor="let item of selectedItem.benefits" (click)="itemTapped($event, item)">
       <ion-card>
-        <img src="{{ item.imgs[0] }}"/>
+        <img src=""/>
       <ion-card-content>
     <ion-card-title>
-      {{ item.title }}
+      {{ item.name }}
       </ion-card-title>
-          <p>{{ item.note }}</p>
+          <p>{{ item.description }}</p>
        </ion-card-content>
       </ion-card>
     </button>
-  </ion-list>
-  
+    </ion-list>
+
 </ion-content>

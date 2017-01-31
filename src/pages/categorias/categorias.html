@@ -1,21 +1,21 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
+    <ion-navbar>
+        <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>{{ title }}</ion-title>
-  </ion-navbar>
+        <ion-title>{{ title }}</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
+
     <button ion-item *ngFor="let item of categories" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-left></ion-icon>
-       {{item.title}}
-      <div class="item-note" item-center>
-        {{item.note}}
+  
+      <div class="item-note" item-left>
+          {{ item.category.name }}
+          <ion-icon name="arrow-forward" item-right></ion-icon>
       </div>
+      
     </button>
-  </ion-list>
 
 </ion-content>
