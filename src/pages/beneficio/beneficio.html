@@ -6,13 +6,22 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>beneficio</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>beneficio</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+    <ion-grid>
+        <ion-row>
+            {{benefit}}
+        </ion-row>
+
+        <ion-row>
+            <button full ion-button color="secondary" (click)="selectPayment($event, benefit)">Comprar desde la App</button>
+        </ion-row>
+    </ion-grid>
 
 </ion-content>

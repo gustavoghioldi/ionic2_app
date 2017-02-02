@@ -6,13 +6,21 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>selectpayment</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>{{title}}</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+    <ion-list *ngFor="let creditCard of paymentMethods" no-lines>
+
+        <button ion-item color="primary" (click)="pay(creditCard)">
+      <ion-icon name="card" item-leftpgar con esta tarjeta></ion-icon>
+      {{ creditCard['card_number']}}
+    </button>
+    </ion-list>
+    <button full ion-button color="secondary" (click)="pay(false)">Pagar on una tarjeta diferente</button>
 
 </ion-content>

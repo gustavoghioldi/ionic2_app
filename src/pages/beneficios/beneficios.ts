@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { Beneficio } from '../beneficio/beneficio';
-import { BenefitsService } from '../../providers/benefits-service';
 
 @Component({
   selector: 'page-beneficios',
-  templateUrl: 'beneficios.html',
-  providers: [BenefitsService]
+  templateUrl: 'beneficios.html'
 
 })
 export class Beneficios {
