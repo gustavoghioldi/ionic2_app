@@ -11,7 +11,7 @@ import { CommunityDataService } from '../../providers/communitydata-service'
 })
 
 export class Page1 {
-  title: string = "Home";
+  title: string = "La Caja";
   CommunityData: any;
   
   constructor(public navCtrl: NavController, public communityDataService: CommunityDataService) {
